@@ -4,7 +4,8 @@ html {
 body {
   font-size: 1.6rem;
 }
-html, body {
+html,
+body {
   height: 100%;
   margin: 0;
 }
@@ -15,8 +16,17 @@ body {
   display: grid;
   place-content: center center;
   background-color: #141622;
+  font-family: system-ui, sans-serif;
+  p {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: white;
+  }
+  a {
+    color: white;
+  }
 }
-
 // -------------
 
 .space-btn {
@@ -24,7 +34,7 @@ body {
   --z-200: -3;
   --z-300: -2;
   --z-400: -1;
-  --z-500:  0;
+  --z-500: 0;
 
   --transition-time: 150ms;
   --transition-timing-function: ease;
@@ -35,12 +45,9 @@ body {
   --bg-default: #3a3a46;
   --fg-default: #adadad;
   --fg-active: #f2f2f2;
-  --bg-active: radial-gradient(circle at center 142%, 
-      #ce47ff 20%, 
-      #9a47ff 72%
-    );
+  --bg-active: radial-gradient(circle at center 142%, #ce47ff 20%, #9a47ff 72%);
 
-  --spark-size: .3rem;
+  --spark-size: 0.3rem;
 
   position: relative;
   z-index: var(--z-500);
@@ -60,8 +67,7 @@ body {
   color: var(--fg-default);
 
   transform: scale(1, 1);
-  transition:
-    all var(--transition-time) var(--transition-timing-function);
+  transition: all var(--transition-time) var(--transition-timing-function);
 
   &:before {
     position: absolute;
@@ -81,9 +87,8 @@ body {
     inset: var(--spark-size);
     overflow: hidden;
     border-radius: var(--border-radius);
-    box-shadow: 
-      0 .2rem 0 rgba(117, 117, 117, 1) inset,
-      0 .3rem 0 rgba(0, 0, 0, 1);
+    box-shadow: 0 0.2rem 0 rgba(117, 117, 117, 1) inset,
+      0 0.3rem 0 rgba(0, 0, 0, 1);
 
     &::before {
       opacity: 0;
@@ -92,7 +97,7 @@ body {
       z-index: var(--z-300);
       inset: 0;
       border-radius: var(--border-radius);
-      box-shadow: 0 .2rem 0 rgba(242, 242, 242, 1) inset;
+      box-shadow: 0 0.2rem 0 rgba(242, 242, 242, 1) inset;
     }
     &::after {
       opacity: 0;
@@ -101,7 +106,7 @@ body {
       z-index: var(--z-300);
       inset: 0;
       border-radius: var(--border-radius);
-      box-shadow: 0 .5rem 0 rgba(0, 0, 0, 1);
+      box-shadow: 0 0.5rem 0 rgba(0, 0, 0, 1);
     }
   }
   &:hover .shadows {
@@ -115,11 +120,11 @@ body {
     content: "";
     position: absolute;
     z-index: var(--z-400);
-    inset: -.6rem;
+    inset: -0.6rem;
     border-radius: var(--border-radius);
     opacity: 0;
-    
-    border: 1rem solid hsla(267, 100%, 64%, .7);
+
+    border: 1rem solid hsla(267, 100%, 64%, 0.7);
   }
   &:hover .border {
     opacity: 1;
@@ -140,8 +145,7 @@ body {
       inset: 0;
       background: var(--bg-active);
       border-radius: var(--border-radius);
-      transition: opacity
-        var(--transition-time)
+      transition: opacity var(--transition-time)
         var(--transition-timing-function);
     }
   }
@@ -173,11 +177,7 @@ body {
       rotate: 0;
       transform: rotate(-90deg);
       //opacity: calc((var(--active)) + 0.4);
-      background: conic-gradient(
-        from 0deg,
-        transparent 0 340deg,
-        white 360deg
-      );
+      background: conic-gradient(from 0deg, transparent 0 340deg, white 360deg);
       //transition: opacity 1.2s;
       animation: rotate90 5s linear infinite both;
     }
@@ -196,9 +196,7 @@ body {
     mask: radial-gradient(circle at center, white 20%, transparent 66%);
     opacity: 0;
     transform: scale(0);
-    transition: all 
-      var(--transition-time) 
-      var(--transition-timing-function);
+    transition: all var(--transition-time) var(--transition-timing-function);
 
     .path {
       position: absolute;
@@ -220,9 +218,7 @@ body {
   &:hover .stars {
     opacity: 1;
     transform: scale(1);
-    transition: all 
-      var(--transition-time) 
-      var(--transition-timing-function) 
+    transition: all var(--transition-time) var(--transition-timing-function)
       var(--transition-delay-1);
   }
 
@@ -234,10 +230,7 @@ body {
     inset: -20rem;
     pointer-events: none;
     border-radius: var(--border-radius);
-    background: radial-gradient(
-      #2b0855,
-      transparent 66%
-    );
+    background: radial-gradient(#2b0855, transparent 66%);
   }
   &:hover .backdrop {
     opacity: 1;
